@@ -1,3 +1,6 @@
+[[plugins]]
+  package = "netlify-plugin-cypress"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
