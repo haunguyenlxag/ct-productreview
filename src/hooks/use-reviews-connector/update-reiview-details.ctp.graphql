@@ -1,0 +1,36 @@
+mutation UpdateReviewDetails(
+  $reviewId: String!
+  $version: Long!
+  $actions: [ReviewUpdateAction!]!
+) {
+  updateReview(id: $reviewId, version: $version, actions: $actions) {
+    id
+    authorName
+    version
+    key
+    rating
+    createdAt
+    includedInStatistics
+    lastModifiedAt
+    version
+    state{
+      key
+      type
+      roles
+    }
+    target{
+      id
+      ... on Product{
+        key
+        masterData{
+          current{
+            nameAllLocales {
+              locale
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+}
